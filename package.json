@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": ": PROJETO EM FASE DE DESENVOLVIMENTO :",
-  "main": "js/api.js",
+  
   "scripts": {
     "test": ""
   },
