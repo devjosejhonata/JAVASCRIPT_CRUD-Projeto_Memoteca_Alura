@@ -1,0 +1,13 @@
+{
+  "name": "javascript_crud-projeto_memoteca_alura",
+  "version": "1.0.0",
+  "type": "module",
+  "description": ": PROJETO EM FASE DE DESENVOLVIMENTO :",
+  "main": "js/api.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [],
+  "author": "José Jhonata <contatojosejhonata@gmail.com> (https://www.linkedin.com/in/josejhonata/)",
+  "license": "ISC"
+}
