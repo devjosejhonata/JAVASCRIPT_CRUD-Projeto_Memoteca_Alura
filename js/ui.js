@@ -59,7 +59,12 @@ const ui = {
 
         const botaoEditar = document.createElement("button");
         botaoEditar.classList.add("botao-editar");
-        botaoEditar.onclick = () => ui.preencherFormulario(pensamento.id);
+        botaoEditar.onclick = () => {
+            ui.preencherFormulario(pensamento.id);
+            
+            // Rolar suavemente até o topo (onde o formulário está)
+            document.getElementById("form-container").scrollIntoView({ behavior: "smooth" });
+        };
 
         const botaoExcluir = document.createElement("button");
         botaoExcluir.classList.add("botao-excluir");

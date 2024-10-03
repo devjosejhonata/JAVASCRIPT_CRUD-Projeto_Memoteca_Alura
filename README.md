@@ -9,3 +9,5 @@ Para executar o projeto, dentro da pasta backend: npm start
 Para executar o frontend, localhost:5500 ou abrir com a extensão live server.
 
 Estou separando as funcionalidades do projeto por arquivos, como estou utilizando o package.json na pasta raiz do projeto, eu ja informei no arquivo package.json que estou trabalhando com módulos, sendo assim eu nao preciso ficar fazendo o export e import nos arquivos que contem suas funcionalidades, só chamar a função diretamente no bloco de código.
+
+Para fazer as requisições HTTP, estou utilizando o metodo fetch que é nativo do javascript, existem outras abordagens como utilizar a biblioteca Axios, mas eu preferi manter as funcionalidades com o fetch.
