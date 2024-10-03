@@ -3,9 +3,14 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     ui.renderizarPensamentos();
-
+    
+    //adicionar
     const formularioPensamento = document.getElementById("pensamento-form");
     formularioPensamento.addEventListener("submit", manipularSubmissaoFormulario);
+    
+    //cancelar
+    const botaoCancelar = document.getElementById("botao-cancelar");
+    botaoCancelar.addEventListener("click", limparFormulario);
 
 });
 
@@ -25,4 +30,12 @@ async function manipularSubmissaoFormulario(event) {
     }
 
 }
+
+// Função para limpar os campos do formulário
+function limparFormulario() {
+    document.getElementById("pensamento-conteudo").value = ''; // Limpa o campo de conteúdo
+    document.getElementById("pensamento-autoria").value = ''; // Limpa o campo de autoria
+    document.getElementById("pensamento-id").value = ''; // Limpa o campo de ID (se estiver em uso)
+}
+
 
