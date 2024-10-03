@@ -2,8 +2,8 @@
   "pensamentos": [
     {
       "id": "2a56",
-      "conteudo": "Vc faz TI? Conserta meu celular!",
-      "autoria": "Grupo da família"
+      "conteudo": "Vc faz TI? Conserta meu celular!\npiada sem graça",
+      "autoria": "Grupo da família - atualizada por jhonata"
     },
     {
       "id": "4c7d",
@@ -74,6 +74,11 @@
       "id": "0875",
       "conteudo": "Testando novamente cadastro de pensamento",
       "autoria": "Jose Jhonata"
+    },
+    {
+      "id": "0fe1",
+      "conteudo": "Testanto cadastro de novo pensamento - correção de bug feita",
+      "autoria": "Dev José Jhonata"
     }
   ]
 }
