@@ -4,13 +4,26 @@
 const ui = {
 
     async renderizarPensamentos() {
+
         const listaPensamentos = document.getElementById("lista-pensamentos");
-        listaPensamentos.innerHTML = "";
 
         try {
             const pensamentos = await api.buscarPensamentos();
 
-            pensamentos.forEach(ui.adicionarPensamentoNaLista);
+            listaPensamentos.innerHTML = "";
+
+            // Verifica se a lista de pensamentos está vazia
+            if (pensamentos.length === 0) {
+                listaPensamentos.innerHTML = `
+                    <div class="mensagem-vazia">
+                        <img src="assets/imagens/lista-vazia.png" alt="Nenhum pensamento encontrado">
+                        <p>Seu mural de pensamentos está vazio. Adicione um novo pensamento!</p>
+                    </div>
+                `;
+            } else {
+                // Caso haja pensamentos, renderiza-os
+                pensamentos.forEach(ui.adicionarPensamentoNaLista);
+            }
         } catch {
             alert('Erro ao renderizar pensamentos')
         }
