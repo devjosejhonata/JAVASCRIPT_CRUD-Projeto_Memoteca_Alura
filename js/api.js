@@ -96,7 +96,26 @@ const api = {
             throw error
         }
 
+    }, 
+
+    //favoritar pensamento
+    async atualizarFavorito(id, favorito) {
+        try {
+            const response = await fetch(`${URL_BASE}/pensamentos/${id}`, {
+                method: "PATCH", // Usando PATCH para atualizar apenas a propriedade que desejamos
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ favorito }) // Enviando o novo valor para a propriedade favorito
+            });
+
+            return await response.json(); // Retorna o pensamento atualizado
+        } catch (error) {
+            alert("Erro ao atualizar favorito");
+            throw error;
+        }
     }
+
 
 }
 
