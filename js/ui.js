@@ -3,17 +3,23 @@
 
 const ui = {
 
-    async renderizarPensamentos() {
+    async renderizarPensamentos(pensamentosFiltrados = null) {
 
         const listaPensamentos = document.getElementById("lista-pensamentos");
 
         try {
-            const pensamentos = await api.buscarPensamentos();
+            let pensamentosParaRenderizar
+
+            if (pensamentosFiltrados) {
+                pensamentosParaRenderizar = pensamentosFiltrados
+            } else {
+                pensamentosParaRenderizar = await api.buscarPensamentos();
+            }
 
             listaPensamentos.innerHTML = "";
 
             // Verifica se a lista de pensamentos está vazia
-            if (pensamentos.length === 0) {
+            if (pensamentosParaRenderizar.length === 0) {
                 listaPensamentos.innerHTML = `
                     <div class="mensagem-vazia">
                         <img src="assets/imagens/lista-vazia.png" alt="Nenhum pensamento encontrado">
@@ -22,7 +28,7 @@ const ui = {
                 `;
             } else {
                 // Caso haja pensamentos, renderiza-os
-                pensamentos.forEach(ui.adicionarPensamentoNaLista);
+                pensamentosParaRenderizar.forEach(ui.adicionarPensamentoNaLista);
             }
         } catch {
             alert('Erro ao renderizar pensamentos')
@@ -61,7 +67,7 @@ const ui = {
         botaoEditar.classList.add("botao-editar");
         botaoEditar.onclick = () => {
             ui.preencherFormulario(pensamento.id);
-            
+
             // Rolar suavemente até o topo (onde o formulário está)
             document.getElementById("form-container").scrollIntoView({ behavior: "smooth" });
         };
