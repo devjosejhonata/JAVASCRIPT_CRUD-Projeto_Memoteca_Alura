@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const botaoCancelar = document.getElementById("botao-cancelar");
     botaoCancelar.addEventListener("click", limparFormulario);
 
+    //pesquisar pensamento
+    const inputBusca = document.getElementById("campo-busca");
+    inputBusca.addEventListener("input", manipularBusca);
+
 });
 
 //cadastrar novo pensamento
@@ -40,6 +44,20 @@ function limparFormulario() {
     document.getElementById("pensamento-conteudo").value = ''; // Limpa o campo de conteúdo
     document.getElementById("pensamento-autoria").value = ''; // Limpa o campo de autoria
     document.getElementById("pensamento-id").value = ''; // Limpa o campo de ID (se estiver em uso)
+}
+
+//função para pesquisar pensamento
+async function manipularBusca() {
+    const termoBusca = document.getElementById("campo-busca").value;
+
+    try {
+        const pensamentosFiltrados = await api.buscarPensamentoPorTermo(termoBusca);
+      
+        ui.renderizarPensamentos(pensamentosFiltrados)
+    } catch (error) {
+        alert("erro ao realizar busca");
+        throw error
+    }
 }
 
 
