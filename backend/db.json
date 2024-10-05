@@ -1,64 +1,28 @@
 {
   "pensamentos": [
     {
-      "id": "f6f9",
-      "favorito": true,
-      "conteudo": "O que passou já passou, o que não passou ainda não passou!",
-      "autoria": "Tiririca"
+      "id": "0daa",
+      "conteudo": "teste 1",
+      "autoria": "aaaa",
+      "data": "2024-10-04"
     },
     {
-      "id": "90d4",
-      "favorito": false,
-      "conteudo": "A programação deveria ser uma segunda língua, ensinada a todas as crianças.",
-      "autoria": "Tim Cook – CEO da Apple"
+      "id": "6a48",
+      "conteudo": "teste 2",
+      "autoria": "bbb",
+      "data": "2024-10-02"
     },
     {
-      "id": "a810",
-      "favorito": true,
-      "conteudo": "Aprender a programar aumenta a mente, ajuda a pensar melhor.",
-      "autoria": "Bill Gates – Fundador da Microsoft"
+      "id": "ad95",
+      "conteudo": "teste 3",
+      "autoria": "cccc",
+      "data": "2024-09-30"
     },
     {
-      "id": "0044",
-      "favorito": false,
-      "conteudo": "Uma mente que se abre a uma nova ideia, jamais voltará ao seu tamanho original.",
-      "autoria": "Albert Einstein"
-    },
-    {
-      "id": "9b91",
-      "favorito": false,
-      "conteudo": "Todas as pessoas deveriam aprender a programar, pois isso ensina a pensar.",
-      "autoria": "Steve Jobs – fundador da Apple"
-    },
-    {
-      "id": "133c",
-      "favorito": false,
-      "conteudo": "          A arte de programar consiste na arte de organizar e dominar a complexidade.",
-      "autoria": "Dijkstra"
-    },
-    {
-      "id": "38d3",
-      "favorito": false,
-      "conteudo": "O sucesso é um professor traiçoeiro. Ele seduz pessoas inteligentes e as faz pensar que elas não podem perder tudo.",
-      "autoria": "Bill Gates"
-    },
-    {
-      "id": "c237",
-      "favorito": false,
-      "conteudo": "É genial festejar o sucesso, mas é mais importante aprender com as lições do fracasso.",
-      "autoria": "Bill Gates"
-    },
-    {
-      "id": "7c98",
-      "favorito": false,
-      "conteudo": "Os líderes do futuro são os que empoderam os outros.",
-      "autoria": "Bill Gates"
-    },
-    {
-      "id": "a539",
-      "favorito": false,
-      "conteudo": "“Tente uma, duas, três vezes e se possível tente a quarta, a quinta e quantas vezes for necessário. Só não desista nas primeiras tentativas, a persistência é amiga da conquista. Se você quer chegar aonde a maioria não chega, faça o que a maioria não faz”.",
-      "autoria": "Bill Gates"
+      "id": "da65",
+      "conteudo": "teste de alterações",
+      "autoria": "teste",
+      "data": "2024-10-04"
     }
   ]
 }

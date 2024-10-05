@@ -41,6 +41,10 @@ const ui = {
         document.getElementById("pensamento-id").value = pensamento.id;
         document.getElementById("pensamento-conteudo").value = pensamento.conteudo;
         document.getElementById("pensamento-autoria").value = pensamento.autoria;
+        
+        // Exibir a data no formato yyyy-mm-dd corretamente
+        const dataUtc = new Date(pensamento.data).toISOString().split("T")[0];
+        document.getElementById("pensamento-data").value = dataUtc;
     },
 
     //cadastrar, editar e excluir pensamentos da interface
@@ -62,6 +66,12 @@ const ui = {
         const pensamentoAutoria = document.createElement("div");
         pensamentoAutoria.textContent = pensamento.autoria;
         pensamentoAutoria.classList.add("pensamento-autoria");
+
+        const pensamentoData = document.createElement("div");
+        // Utiliza UTC para formatar a data sem o fuso horário local
+        const dataFormatada = new Date(pensamento.data).toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+        pensamentoData.textContent = dataFormatada;
+        pensamentoData.classList.add("pensamento-data");
 
         const botaoEditar = document.createElement("button");
         botaoEditar.classList.add("botao-editar");
@@ -119,6 +129,7 @@ const ui = {
         li.appendChild(iconeAspas);
         li.appendChild(pensamentoConteudo);
         li.appendChild(pensamentoAutoria);
+        li.appendChild(pensamentoData);
         li.appendChild(icones);
         listaPensamentos.appendChild(li);
 

@@ -3,13 +3,27 @@
 
 const URL_BASE = "http://localhost:3000"
 
+// Função corrigida para converter string de data em UTC
+const converterStringParaData = (dataString) => {
+    const [ano, mes, dia] = dataString.split("-");
+    return new Date(Date.UTC(ano, mes - 1, dia)); // Cria a data em UTC
+};
+
+
 const api = {
 
     //buscando dados
     async buscarPensamentos() {
         try {
             const response = await fetch(`${URL_BASE}/pensamentos`);
-            return await response.json();
+            const pensamentos = await response.json();
+
+            return pensamentos.map(pensamento => {
+                return {
+                    ...pensamento, 
+                    data: new Date(pensamento.data)
+                }
+            })
         } catch (error) {
             alert('Erro ao buscar pensamentos')
 
@@ -20,12 +34,22 @@ const api = {
     //adicionando novo pensamento
     async salvarPensamento(pensamento) {
         try {
+
+            // Converte a data da string para o formato correto
+            const dataConvertida = converterStringParaData(pensamento.data);
+
+            // Cria um novo objeto pensamento com a data convertida
+            const pensamentoComData = {
+                ...pensamento,
+                data: dataConvertida.toISOString() // Converte para o formato ISO 8601
+            };
+
             const response = await fetch(`${URL_BASE}/pensamentos`, {
                 method: "POST",
                 headers: {
                     "Content-Type" : "application/json"
                 }, 
-                body: JSON.stringify(pensamento)
+                body: JSON.stringify(pensamentoComData), 
             });
             return await response.json();
         } catch (error) {
@@ -39,7 +63,12 @@ const api = {
     async buscarPensamentoPorId(id) {
         try {
             const response = await fetch(`${URL_BASE}/pensamentos/${id}`);
-            return await response.json();
+            const pensamento = await response.json();
+
+            return {
+                ...pensamento, 
+                data: new Date(pensamento.data)
+            }
         } catch (error) {
             alert('Erro ao buscar pensamentos')
 
