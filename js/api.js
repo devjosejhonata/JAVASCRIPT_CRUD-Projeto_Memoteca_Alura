@@ -5,6 +5,7 @@ const URL_BASE = "http://localhost:3000"
 
 // Função corrigida para converter string de data em UTC
 const converterStringParaData = (dataString) => {
+    
     const [ano, mes, dia] = dataString.split("-");
     return new Date(Date.UTC(ano, mes - 1, dia)); // Cria a data em UTC
 };

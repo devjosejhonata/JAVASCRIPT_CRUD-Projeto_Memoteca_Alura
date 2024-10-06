@@ -1,58 +1,28 @@
 {
   "pensamentos": [
     {
-      "id": "0daa",
-      "conteudo": "teste 1",
-      "autoria": "aaaa",
-      "data": "2024-10-04"
+      "id": "3b50",
+      "conteudo": "testando a correcao do bug de datas com essa data tem que ir",
+      "autoria": "dev jose",
+      "data": "2024-10-06T00:00:00.000Z"
     },
     {
-      "id": "40f5",
-      "conteudo": "dddddddddddddddddddddd",
+      "id": "38d0",
+      "conteudo": "dasdasdad a fdasfa daa",
+      "autoria": "dasafa fda",
+      "data": "2024-10-06T00:00:00.000Z"
+    },
+    {
+      "id": "a8ab",
+      "conteudo": "T dadfsa fdadaf fdasdfas fdasafa ",
       "autoria": "teste",
-      "data": "2024-10-03T00:00:00.000Z"
+      "data": "2024-10-06T00:00:00.000Z"
     },
     {
-      "id": "7ffb",
-      "conteudo": "tesdsssssssssssssssssssss",
-      "autoria": "teste",
-      "data": "2024-10-04T00:00:00.000Z"
-    },
-    {
-      "id": "9847",
-      "conteudo": "dsdsssssssssssssdddddddddddddddddd",
-      "autoria": "stestres",
-      "data": "2024-10-03T00:00:00.000Z"
-    },
-    {
-      "id": "1160",
-      "conteudo": "dsssdddddddddddddddd",
-      "autoria": "tes",
-      "data": "2024-10-03"
-    },
-    {
-      "id": "e468",
-      "conteudo": "dsssdddddddddddddddd",
-      "autoria": "jhon",
-      "data": "2024-10-05T00:00:00.000Z"
-    },
-    {
-      "id": "d329",
-      "conteudo": "dsssdddddddddddddddd",
-      "autoria": "teste",
-      "data": "2024-10-05T00:00:00.000Z"
-    },
-    {
-      "id": "b889",
-      "conteudo": "dsssdddddddddddddddd",
-      "autoria": "teste",
-      "data": "2024-10-05T00:00:00.000Z"
-    },
-    {
-      "id": "10f0",
-      "conteudo": "dsssdddddddddddddddda teste",
-      "autoria": "jose jhonata",
-      "data": "2024-10-04T00:00:00.000Z"
+      "id": "b684",
+      "conteudo": "dfasdadf fdasfasdf",
+      "autoria": "dfsa",
+      "data": "2024-10-06T00:00:00.000Z"
     }
   ]
 }

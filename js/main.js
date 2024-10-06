@@ -127,8 +127,21 @@ async function manipularBusca() {
 // função para manipular data
 function validarData(data) {
     const dataAtual = new Date();
+
+    // Zera horas, minutos e segundos da data atual
+    dataAtual.setHours(0, 0, 0, 0);
+
+    // Converte a data inserida
     const dataInserida = new Date(data);
-    return dataInserida <= dataAtual;
+
+    // Zera horas, minutos e segundos da data inserida
+    dataInserida.setHours(0, 0, 0, 0);
+
+    console.log('Data atual:', dataAtual); // Log da data atual
+    console.log('Data inserida:', dataInserida); // Log da data inserida
+
+    // Verifica se a data inserida é maior que a data atual
+    return dataInserida < dataAtual; // A data deve ser estritamente anterior à atual
 }
 
 
