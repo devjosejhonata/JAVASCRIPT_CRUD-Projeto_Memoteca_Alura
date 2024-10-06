@@ -1,6 +1,22 @@
 
 /* arquivo responsavel pela logica principal do carregamento da aplicação,   */
 
+const regexConteudo = /^[A-Za-z\s]{10,150}$/;
+const regexAutoria = /^[A-Za-z\s]{3,15}$/; 
+
+function validarConteudo(conteudo) {
+    return regexConteudo.test(conteudo);
+}
+
+function validarAutoria(autoria) {
+    return regexAutoria.test(autoria);
+}
+
+function removerEspacos(string) {
+    return string.replaceAll(/\s+/g, '')
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     ui.renderizarPensamentos();
     
@@ -27,6 +43,17 @@ async function manipularSubmissaoFormulario(event) {
     const autoria = document.getElementById("pensamento-autoria").value;
     const data = document.getElementById("pensamento-data").value;
 
+   
+    if (!validarConteudo(conteudo) || !removerEspacos(conteudo)) {
+        alert("Não é permitido espaços vazios e É permitida a inclusão apenas de letras e espaços com no mínimo 10 caracteres e no máximo 150 caracteres")
+        return
+    }
+
+    if (!validarAutoria(autoria)) {
+        alert("A autoria deve conter apenas letras e ter entre 3 e 15 caracteres e sem espaços vazios");
+        return
+    }
+    
     if(!validarData(data)) {
         alert("Não é permitido o cadastro de datas futuras. Selecione outra data")
         return
