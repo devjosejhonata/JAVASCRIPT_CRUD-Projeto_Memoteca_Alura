@@ -1,6 +1,25 @@
 
 /* arquivo responsavel pela logica principal do carregamento da aplicação,   */
 
+// para a chave de cada pensamento e evitar pensamentos duplicados
+const pensamentosSet = new Set()
+
+async function adicionarChaveAoPensamento() {
+    try {
+      const pensamentos = await api.buscarPensamentos()
+      pensamentos.forEach(pensamento => {
+
+        // Chave composta apenas pelo conteúdo do pensamento
+        const chavePensamento = pensamento.conteudo.trim().toLowerCase();
+        pensamentosSet.add(chavePensamento);
+        
+      })
+    } catch (error) {
+      alert('Erro ao adicionar chave ao pensamento')
+    }
+}
+
+//validações de conteudo e autoria
 const regexConteudo = /^[A-Za-z\s]{10,150}$/;
 const regexAutoria = /^[A-Za-z\s]{3,15}$/; 
 
@@ -12,6 +31,7 @@ function validarAutoria(autoria) {
     return regexAutoria.test(autoria);
 }
 
+//função para remover espaços vazios
 function removerEspacos(string) {
     return string.replaceAll(/\s+/g, '')
 }
@@ -19,6 +39,7 @@ function removerEspacos(string) {
 
 document.addEventListener("DOMContentLoaded", () => {
     ui.renderizarPensamentos();
+    adicionarChaveAoPensamento();
     
     //adicionar
     const formularioPensamento = document.getElementById("pensamento-form");
@@ -43,7 +64,7 @@ async function manipularSubmissaoFormulario(event) {
     const autoria = document.getElementById("pensamento-autoria").value;
     const data = document.getElementById("pensamento-data").value;
 
-   
+    //validações do formulario 
     if (!validarConteudo(conteudo) || !removerEspacos(conteudo)) {
         alert("Não é permitido espaços vazios e É permitida a inclusão apenas de letras e espaços com no mínimo 10 caracteres e no máximo 150 caracteres")
         return
@@ -58,7 +79,17 @@ async function manipularSubmissaoFormulario(event) {
         alert("Não é permitido o cadastro de datas futuras. Selecione outra data")
         return
     }
+    
+    //Funcionalidade para evitar pensamentos duplicados ao cadastrar 
 
+    const chaveNovoPensamento = conteudo.trim().toLowerCase();    
+
+    if(pensamentosSet.has(chaveNovoPensamento)) {
+        alert('Esse pensamento já existe')
+        return
+    }
+
+    //try e catch para editar e salvar novo pensamento
     try {
         if (id) {
             await api.editarPensamento({ id, conteudo, autoria, data });
