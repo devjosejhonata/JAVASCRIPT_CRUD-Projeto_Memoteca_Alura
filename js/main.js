@@ -20,8 +20,9 @@ async function adicionarChaveAoPensamento() {
 }
 
 //validações de conteudo e autoria
-const regexConteudo = /^[A-Za-z\s]{10,150}$/;
-const regexAutoria = /^[A-Za-z\s]{3,15}$/; 
+const regexConteudo = /^.{10,120}$/; // Aceita qualquer caractere entre 10 e 120
+const regexAutoria = /^.{3,30}$/;     // Aceita qualquer caractere entre 3 e 30
+
 
 function validarConteudo(conteudo) {
     return regexConteudo.test(conteudo);
@@ -81,7 +82,6 @@ async function manipularSubmissaoFormulario(event) {
     }
     
     //Funcionalidade para evitar pensamentos duplicados ao cadastrar 
-
     const chaveNovoPensamento = conteudo.trim().toLowerCase();    
 
     if(pensamentosSet.has(chaveNovoPensamento)) {

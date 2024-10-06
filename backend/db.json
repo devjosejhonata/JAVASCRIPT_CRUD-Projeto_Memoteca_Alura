@@ -1,27 +1,33 @@
 {
   "pensamentos": [
     {
-      "id": "3b50",
-      "conteudo": "testando a correcao do bug de datas com essa data tem que ir",
-      "autoria": "dev jose",
+      "id": "3d18",
+      "conteudo": "Testando correção de bug com as datas! Ao selecionar a data de hoje tem que ir.",
+      "autoria": "Dev José Jhonata",
       "data": "2024-10-06T00:00:00.000Z"
     },
     {
-      "id": "38d0",
-      "conteudo": "dasdasdad a fdasfa daa",
-      "autoria": "dasafa fda",
+      "id": "1129",
+      "conteudo": "Testando correção de validação de expreções regulares. @, #, ç, ~^, essas tem que ir. ",
+      "autoria": "Dev José Jhonata",
       "data": "2024-10-06T00:00:00.000Z"
     },
     {
-      "id": "a8ab",
-      "conteudo": "T dadfsa fdadaf fdasdfas fdasafa ",
-      "autoria": "teste",
+      "id": "2408",
+      "conteudo": "Testando correção de validação de expreções regulares. @, #, ç, ~^, essas tem que ir. Testando autoria agora testando nova data",
+      "autoria": "Dev José Jhonata@#",
+      "data": "2024-10-03"
+    },
+    {
+      "id": "d41c",
+      "conteudo": "Testando correção de validação de expreções regulares. @, #, ç, ~^, essas tem que ir. Testando correção de validação de expreções reessas tem que ir.",
+      "autoria": "Dev José Jhonata",
       "data": "2024-10-06T00:00:00.000Z"
     },
     {
-      "id": "b684",
-      "conteudo": "dfasdadf fdasfasdf",
-      "autoria": "dfsa",
+      "id": "2aa8",
+      "conteudo": "Testando correção de validação de expreções regulares. @, #, ç, ~^, essas tem que ir. Testando correção de validação de ",
+      "autoria": "Dev José Jhonata",
       "data": "2024-10-06T00:00:00.000Z"
     }
   ]
